@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "About";
+}
+<head>
+    <link rel="stylesheet" type="text/css" href="~/content/Site.css">
+</head>
+<div class="text-center">
+
+    <h2>@ViewBag.Title</h2>
+    <h3>@ViewBag.Message</h3>
+    @{
+        var verList = ViewData["vers"];
+    }
+    <ul>
+        @foreach (string s in (List<string>)verList)
+        { <li class="appBullet"> @s </li>}
+    </ul>
+</div>
