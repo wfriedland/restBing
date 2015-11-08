@@ -1,0 +1,17 @@
+﻿@using System.Net.NetworkInformation
+@{
+    ViewBag.Title = "startPing";
+}
+
+<h2 class="text-center">Ping</h2>
+
+@{
+    PingReply pingReply = (PingReply)ViewData["ping"];
+    string dest = (string)ViewData["pingDest"];
+    UriHostNameType hostType = (UriHostNameType)ViewData["hostType"];
+}
+<div class="text-center">
+    <p>Ping Destination: @dest</p>
+    <p>Ping Status: @pingReply.Status</p>
+    <p>Host Type: @hostType</p>
+</div>

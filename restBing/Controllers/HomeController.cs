@@ -29,5 +29,20 @@ namespace restBing.Controllers
 
             return View();
         }
+
+        public ActionResult startPing(string ipAddr)
+        {
+            pingObj po = new pingObj();
+            ViewData["hostType"] = Uri.CheckHostName(ipAddr);
+            po.send(ipAddr);
+            ViewData["pingDest"] = ipAddr; 
+            ViewData["ping"] = po.reply;
+            return View();
+        }
+
+        public ActionResult stockQuote(string ticker)
+        {
+            return View();
+        }
     }
 }

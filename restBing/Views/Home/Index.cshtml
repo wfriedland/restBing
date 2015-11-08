@@ -1,4 +1,8 @@
-﻿@{
+﻿<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -7,20 +11,25 @@
     <p></p>
 </div>
 
-<div class="row">
+<div class="row" >
     <div class="col-md-4">
-        <h2>Rest</h2>
-        <p>
-           
-        </p>
+        <h3 class="text-center">Ping Test</h3>
+        <form action="home/startPing" method="post">
+            IP Address or HostName: <input type="text" name="ipAddr" size="20" required />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <div class="col-md-4">
+        <h3>Get Stock Quote</h3>
+        <form action="home/stockQuote" meoth="post">
+            Stock Ticker: <input type="text" name="ticker" size="4" required />
+            <input type="submit" value="Submit" />
+        </form>
         <p></p>
     </div>
     <div class="col-md-4">
-        <h2></h2>
-        <p></p>
-    </div>
-    <div class="col-md-4">
-        <h2></h2>
+        <h3>Next Test</h3>
         <p></p>
     </div>
 </div>
+
