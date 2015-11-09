@@ -181,6 +181,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\pingObj.cs" />
     <Compile Include="Models\regVersion.cs" />
+    <Compile Include="Models\stdDev.cs" />
     <Compile Include="Models\yahooQuote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
