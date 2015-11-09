@@ -3,5 +3,10 @@
     ViewBag.Title = "stockQuote";
 }
 
-<h2>stockQuote</h2>
-
+<h2>Stock Quote</h2>
+@{ 
+    string tickr = (string)ViewData["ticker"];
+    string price = (string)ViewData["Price"];
+}
+<p>Ticker: @tickr</p>
+<p>Price: $ @price</p>

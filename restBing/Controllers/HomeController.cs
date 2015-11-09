@@ -42,6 +42,10 @@ namespace restBing.Controllers
 
         public ActionResult stockQuote(string ticker)
         {
+            yahooQuote yq = new yahooQuote(ticker);
+            string resp = yq.sendGet();
+            ViewData["ticker"] = yq.ticker;
+            ViewData["Price"] = resp;
             return View();
         }
     }
