@@ -52,10 +52,32 @@ namespace restBing.Controllers
         {
             List<string> fmtBlock = new List<string>();
             rawData.Replace('\n', ',');
+            rawData.Replace('"', ' ');
+
             string[] blocks = rawData.ToString().Split(',');
-            fmtBlock.Add("The rain in spain");
-            fmtBlock.Add("Falls Mainly ...");
-            fmtBlock.Add(".. on my kitchen floor");
+            for (int i = 0; i < blocks.Length; i++)
+            {
+                if (blocks[i].ToUpper().Trim().Contains("XOM"))
+                {
+                    string str = blocks[i].ToUpper() + ":  " + blocks[i + 3];
+                    fmtBlock.Add(str);
+                }
+                else if (blocks[i].ToUpper().Trim().Contains("FB"))
+                {
+                    string str1 = blocks[i].ToUpper() + ":  " + blocks[i + 3];
+                    fmtBlock.Add(str1);
+                }
+                else if (blocks[i].ToUpper().Trim().Contains("EXPE"))
+                {
+                    string str2 = blocks[i].ToUpper() + ":  " + blocks[i + 3];
+                    fmtBlock.Add(str2);
+                }
+                else if (blocks[i].ToUpper().Trim().Contains("JNPR"))
+                {
+                    string str3 = blocks[i].ToUpper() + ":  " + blocks[i + 3];
+                    fmtBlock.Add(str3);
+                }
+            }
             return fmtBlock;
         }
     }
