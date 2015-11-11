@@ -48,5 +48,15 @@ namespace restBing.Controllers
             ViewData["Price"] = resp;
             return View();
         }
+
+        public ActionResult GetEndOfDay()
+        {
+            EodStockList stocks = new EodStockList();
+            string data = stocks.sendGet();
+            ViewData["rawData"] = data;
+            ViewData["fmtData"] = stocks.formatBlock();
+            return View();
+
+        }
     }
 }

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "GetEndOfDay";
+}
+
+<h2>Block Of Data Received From Yahoo</h2>
+@{ 
+    string rawData = (string)ViewData["rawData"];
+    List<string> formattedData = (List<string>)ViewData["fmtData"];
+}
+
+<p>Raw Data</p>
+<p>@rawData</p>
+
+<hr />
+<p>Formatted Data</p>
+<ul>
+    @foreach (string s in formattedData)
+    {
+    <li class="appBullet"> @s </li>}
+</ul>
+

@@ -52,7 +52,7 @@ namespace restBing.Models
         }
         public bool addPrice(double close)
         {
-
+            return true;
         }
 
     }
